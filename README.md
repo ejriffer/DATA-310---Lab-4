@@ -1,18 +1,18 @@
-## DATA-310---Lab-4
+# DATA-310---Lab-4
 
-# Question 1: Regularization is defined as
+## Question 1: Regularization is defined as
 
 B. The minimization of the sum of squared residuals subject to a constraint on the weights (aka coefficients). - Regularization is # necessary when the input features X are rank deficient or when there is strong multiple linear correlations among the input features. # Regularization tries to minimize the sum of the square residuals like a normal regression, but there is a constraint of the weights. 
 
-# Question 2: The regularization with the square of an L2 distance may improve the results compared to OLS when the number of features is higher than the number of observations.
+## Question 2: The regularization with the square of an L2 distance may improve the results compared to OLS when the number of features is higher than the number of observations.
 
 True. - When the number of features is higher than the number of observations regularization is necessary because there is # rank deficiency. 
 
-# Question 3: The L1 norm always yields shorter distances compared to the Euclidean norm.
+## Question 3: The L1 norm always yields shorter distances compared to the Euclidean norm.
 
 False. - L2 (or Ridge Regression) penalizes a model for having more or larger parameters, while L1 (or Lasso Regression) can# set some of the model coefficients to zero which basically removes those variables from the regression. So, depending on your data# and what it looks like L1 or L2 could yield a shorter distance. 
 
-# Question 4: Typically, the regularization is achieved by
+## Question 4: Typically, the regularization is achieved by
 
 D. minimizing the average of the squared residuals plus a penalty function whose input is the vector of coefficients. -
 
@@ -25,11 +25,11 @@ $$\text{minimize} \frac{1}{n}\sum_{i=1}^{n}\left(\text{Residual}_i\right)^2 + \a
 
 As you can see above all types of regression minimize the average squared residuals plus a function whose input is # the vector of coefficients.
 
-# Question 5: A regularization method that facilitates variable selection (estimating some coefficients as zero) is
+## Question 5: A regularization method that facilitates variable selection (estimating some coefficients as zero) is
 
 D. Lasso - Because Lasso has a penalty function that uses the absolute value of the vector of coefficients it can set certain# variable weights to 0, basically removing them from the regression. 
 
-# Question 6: Write your own Python code to import the Boston housing data set (from the sklearn library) and scale the data (not the target) by z-scores. If we use all the features with the Linear Regression to predict the target variable then the root mean squared error (RMSE) is: (your answer should include only the first 4 decimals that you get from the code)
+## Question 6: Write your own Python code to import the Boston housing data set (from the sklearn library) and scale the data (not the target) by z-scores. If we use all the features with the Linear Regression to predict the target variable then the root mean squared error (RMSE) is: (your answer should include only the first 4 decimals that you get from the code)
 
 from sklearn.datasets import load_boston
 
@@ -49,7 +49,7 @@ lm = LinearRegression()lm.fit(xscaled,y)yhat_lm = lm.predict(xscaled)
 
 np.sqrt(np.mean((y-yhat_lm)^2)) = 4.679191295697282
 
-# Question 7:On the Boston housing data set if we consider the Lasso model with 'alpha=0.03' then the 10-fold cross-validated prediction error is: (for the 10-fold cross-validation shuffle you should use random_state=1234, your final answer should include only the first 4 decimals that you get from the code)
+## Question 7:On the Boston housing data set if we consider the Lasso model with 'alpha=0.03' then the 10-fold cross-validated prediction error is: (for the 10-fold cross-validation shuffle you should use random_state=1234, your final answer should include only the first 4 decimals that you get from the code)
 
 from sklearn.linear_model import Lasso
 
@@ -83,7 +83,7 @@ print('The k-fold crossvalidated error rate on the train sets is: ' + str(np.sqr
 
 print('The k-fold crossvalidated error rate on the test sets is: ' + str(np.sqrt(np.mean(PE)))) = The k-fold crossvalidated error rate on the test sets is: 4.974181421491436
 
-# Question 8: On the Boston housing data set if we consider the Elastic Net model with 'alpha=0.05' and 'l1_ratio=0.9' then the 10-fold cross-validated prediction error is: (for the 10-fold cross-validation shuffle you should use random_state=1234, your final answer should include only the first 4 decimals that you get from the code)
+## Question 8: On the Boston housing data set if we consider the Elastic Net model with 'alpha=0.05' and 'l1_ratio=0.9' then the 10-fold cross-validated prediction error is: (for the 10-fold cross-validation shuffle you should use random_state=1234, your final answer should include only the first 4 decimals that you get from the code)
 
 from sklearn.linear_model import ElasticNet
 
@@ -123,7 +123,7 @@ print('The k-fold crossvalidated error rate on the train sets is: ' + str(np.sqr
 
 print('The k-fold crossvalidated error rate on the test sets is: ' + str(np.sqrt(np.mean(PE)))) = The k-fold crossvalidated error rate on the test sets is: 4.949410860688574
 
-# Question 9: If we create all quadratic polynomial (degree=2) features based on the z-scores of the original features and then apply OLS, the root mean squared error is:
+## Question 9: If we create all quadratic polynomial (degree=2) features based on the z-scores of the original features and then apply OLS, the root mean squared error is:
 
 from sklearn.preprocessing import PolynomialFeatures
 
@@ -141,7 +141,7 @@ yhat_lm = lm.predict(x_poly)
 
 np.sqrt(np.mean((y-yhat_lm)^2)) = 2.4482875016619703
 
-# Question 10: If we create all quadratic polynomial (degree=2) features based on the z-scores of the original features and then apply the Ridge regression with alpha=0.1 and we create a Quantile-Quantile plot for the residuals then the result shows that the obtained residuals pretty much follow a normal distribution.
+## Question 10: If we create all quadratic polynomial (degree=2) features based on the z-scores of the original features and then apply the Ridge regression with alpha=0.1 and we create a Quantile-Quantile plot for the residuals then the result shows that the obtained residuals pretty much follow a normal distribution.
 
 from sklearn.linear_model import Ridge
 
