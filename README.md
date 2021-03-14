@@ -17,10 +17,15 @@ False. - L2 (or Ridge Regression) penalizes a model for having more or larger pa
 D. minimizing the average of the squared residuals plus a penalty function whose input is the vector of coefficients. -
 
 L1 Regression:
+
 $$\text{minimize} \frac{1}{n}\sum_{i=1}^{n}\left(\text{Residual}_i\right)^2 + \alpha \|\beta\|_1$$
+
 L2 Regression:
+
 $$\text{minimize} \frac{1}{n}\sum_{i=1}^{n}\left(\text{Residual}_i\right)^2 + \alpha \sum\limits_{j=1}^{p}\beta_j^2$$
+
 ElasticNet Regression:
+
 $$\text{minimize} \frac{1}{n}\sum_{i=1}^{n}\left(\text{Residual}_i\right)^2 + \alpha\left( \lambda\cdot \sum\limits_{j=1}^{p}|\beta_j| + (1-\lambda)\cdot\sum\limits_{j=1}^{p}\beta_j^2\right)$$
 
 As you can see above all types of regression minimize the average squared residuals plus a function whose input is # the vector of coefficients.
