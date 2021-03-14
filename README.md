@@ -160,4 +160,6 @@ residuals = y - model.predict(x_poly)import pylabimport statsmodels.api as smsm.
 
 pylab.show()
 
+<img width="406" alt="Screen Shot 2021-03-14 at 11 34 38 AM" src="https://user-images.githubusercontent.com/74326062/111074461-6a2bbe80-84b9-11eb-9bea-a32195934289.png">
+
 Above plot shows it almost perfectly follows a normal curve (a bit skewed at the top however)
